@@ -13,3 +13,7 @@ const api = axios.create({
 
 
 export default api;
+// src/api/api.ts
+
+export * from './projects';
+export * from './profile';

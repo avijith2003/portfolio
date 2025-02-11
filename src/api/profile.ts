@@ -1,18 +1,23 @@
+// src/api/profile.ts
 
-// Description: Get user profile information
-// Endpoint: GET /api/profile
-// Request: {}
-// Response: {
-//   name: string,
-//   description: string,
-//   image: string,
-//   links: { github: string, linkedin: string, email: string }
-//   skills: {
-//     category: string,
-//     items: string[]
-//   }[]
-// }
-export const getProfile = () => {
+export interface Skill {
+    category: string;
+    items: string[];
+  }
+  
+  export interface Profile {
+    name: string;
+    description: string;
+    image: string;
+    links: {
+      github: string;
+      linkedin: string;
+      email: string;
+    };
+    skills: Skill[];
+  }
+  
+  export const getProfile = (): Promise<Profile> => {
     // Mocking the response
     return new Promise((resolve) => {
         setTimeout(() => {
