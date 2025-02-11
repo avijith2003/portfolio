@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosError } from 'axios';
+import axios from 'axios';
 
 const backendURL = '';
 const api = axios.create({
@@ -11,6 +11,5 @@ const api = axios.create({
   },
 });
 
-let accessToken: string | null = null;
 
 export default api;

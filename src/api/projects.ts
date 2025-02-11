@@ -1,4 +1,3 @@
-import api from './api';
 
 // Description: Get all portfolio projects
 // Endpoint: GET /api/projects

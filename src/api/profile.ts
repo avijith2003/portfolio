@@ -1,4 +1,3 @@
-import api from './api';
 
 // Description: Get user profile information
 // Endpoint: GET /api/profile
