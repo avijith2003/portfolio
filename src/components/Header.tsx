@@ -1,14 +1,9 @@
-import { Home } from "lucide-react"
+import { FileText } from "lucide-react" // Changed from Home to FileText
 import { Button } from "./ui/button"
-import { useNavigate } from "react-router-dom"
 
 export function Header() {
-  const navigate = useNavigate();
-
-  const handleHomeClick = () => {
-    navigate("/");
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  // PDF file path (assuming resume.pdf is in your public folder)
+  const resumePDF = "/resume.pdf"
 
   return (
     <header className="fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur-sm">
@@ -17,9 +12,16 @@ export function Header() {
           <div className="text-xl font-bold">Avijith Manikandan</div>
         </div>
         <div className="flex items-center gap-4">
-          <Button variant="ghost" onClick={handleHomeClick} size="sm">
-            <Home className="h-4 w-4 mr-2" />
-            Home
+          <Button variant="ghost" asChild>
+            <a 
+              href={resumePDF} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
+              <FileText className="h-4 w-4 mr-2" />
+              Resume
+            </a>
           </Button>
           <Button variant="ghost" asChild>
             <a href="#projects">Projects</a>
